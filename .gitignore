@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# OS & Editors
+.DS_Store
+.vscode/
+.idea/
+
+# Large model weights, local datasets, and inference outputs
+models/
+datasets/
+outputs/
+*.ckpt
+*.pth
+*.pt
+*.bin
+weights/*.safetensors
+*.partial

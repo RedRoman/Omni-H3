@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "restoreh3"
+version = "1.0.0"
+description = "RestoreH3: Physics-Guided Blind All-in-One Image Restoration with MiniMax-H3-Image"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+  {name = "Zihao He"},
+  {name = "Songhua Liu", email = "liusonghua@sjtu.edu.cn"},
+]
+dependencies = [
+  "torch>=2.4.0",
+  "numpy>=1.24.0",
+  "Pillow>=10.0.0",
+  "scipy>=1.11.0",
+  "scikit-image>=0.22.0",
+  "safetensors>=0.4.2",
+  "diffusers>=0.36.0",
+  "transformers>=4.49.0",
+  "accelerate>=1.0.0",
+]
+
+[project.scripts]
+restoreh3 = "restoreh3.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["restoreh3*"]
+
+[tool.setuptools.package-data]
+restoreh3 = ["prompts.json"]
