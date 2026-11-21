@@ -1,4 +1,4 @@
-"""RestoreH3: Physics-Guided Blind All-in-One Image Restoration with MiniMax-H3-Image."""
+"""Omni-H3: Unifying Blind All-in-One Image Restoration in Frozen Foundation Models via Constrained Posterior Projection."""
 from __future__ import annotations
 
 __version__ = "1.0.0"

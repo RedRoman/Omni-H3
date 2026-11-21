@@ -3,9 +3,9 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "restoreh3"
+name = "omni-h3"
 version = "1.0.0"
-description = "RestoreH3: Physics-Guided Blind All-in-One Image Restoration with MiniMax-H3-Image"
+description = "Omni-H3: Unifying Blind All-in-One Image Restoration in Frozen Foundation Models via Constrained Posterior Projection"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
@@ -26,10 +26,11 @@ dependencies = [
 ]
 
 [project.scripts]
+omni-h3 = "omnih3.cli:main"
 restoreh3 = "restoreh3.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["restoreh3*"]
+include = ["omnih3*", "restoreh3*"]
 
 [tool.setuptools.package-data]
 restoreh3 = ["prompts.json"]

@@ -13,8 +13,8 @@ IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".bmp", ".webp", ".tif", ".tiff"}
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        prog="restoreh3",
-        description="RestoreH3: Physics-Guided Blind All-in-One Image Restoration with MiniMax-H3-Image",
+        prog="omni-h3",
+        description="Omni-H3: Unifying Blind All-in-One Image Restoration in Frozen Foundation Models via Constrained Posterior Projection",
     )
     parser.add_argument("--input", "-i", required=True, type=Path, help="Input image file or directory")
     parser.add_argument("--output", "-o", required=True, type=Path, help="Output image file or directory")

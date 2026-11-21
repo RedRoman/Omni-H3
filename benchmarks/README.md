@@ -1,6 +1,6 @@
 # 925-Task Strictly Blind Benchmark Suite
 
-All quantitative numbers reported in the RestoreH3 technical report are evaluated under a **100%-blind, zero-leakage native-pixel protocol**:
+All quantitative numbers reported in the Omni-H3 technical report are evaluated under a **100%-blind, zero-leakage native-pixel protocol**:
 
 - Zero task labels, dataset tags, ROI annotations, or ground-truth leakage during inference.
 - Identical `lpips_vgg`, DISTS, PSNR, SSIM, NIQE, MUSIQ, Sobel Edge-F1@1px, local `32x32` chromatic drift (`ChP95`), and `Qwen3-VL-32B` OCR scoring across all compared external omni-image and all-in-one SOTA baselines.

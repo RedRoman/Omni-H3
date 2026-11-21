@@ -1,4 +1,4 @@
-"""Compact 0.92M-Parameter Auxiliary Weather Pre-Conditioner for RestoreH3.
+"""Compact 0.92M-Parameter Auxiliary Weather Pre-Conditioner for Omni-H3.
 
 Represents <0.003% of the 33B MiniMax-H3-Image backbone parameters. Activated exclusively in
 Stage I when VLM-Koschmieder consensus confirms severe atmospheric degradation (heavy rain,
@@ -18,7 +18,7 @@ from .ops_primitives import SEED, build_v10_omni_precond
 PRECOND_FILENAME = "restoreh3_weather_precond_0.92m.safetensors"
 PRECOND_SHA256 = "cb8be30d0bda6f4b976ebd7e4471730d202d5eba0dc370abca4b0e9c32c120f8"
 PRECOND_RELEASE_URL = (
-    "https://github.com/RedRoman/RestoreH3/releases/download/v1.0.0/"
+    "https://github.com/RedRoman/Omni-H3/releases/download/v1.0.0/"
     "restoreh3_weather_precond_0.92m.safetensors"
 )
 
