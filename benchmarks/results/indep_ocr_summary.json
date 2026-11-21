@@ -74,35 +74,35 @@
       "textzoom_150": {
         "all_150": {
           "n": 150,
-          "word_acc": 0.0267,
-          "exact_rate": 0.0267,
-          "cer": 0.9062,
-          "sub_cer": 0.9062,
-          "alien_rate": 0.0
+          "word_acc": 0.4467,
+          "exact_rate": 0.4467,
+          "cer": 0.3895,
+          "sub_cer": 0.3879,
+          "alien_rate": 0.0267
         },
         "easy_50": {
           "n": 50,
-          "word_acc": 0.0,
-          "exact_rate": 0.0,
-          "cer": 0.9688,
-          "sub_cer": 0.9688,
-          "alien_rate": 0.0
+          "word_acc": 0.7,
+          "exact_rate": 0.7,
+          "cer": 0.2018,
+          "sub_cer": 0.1968,
+          "alien_rate": 0.04
         },
         "medium_50": {
           "n": 50,
-          "word_acc": 0.0,
-          "exact_rate": 0.0,
-          "cer": 0.9601,
-          "sub_cer": 0.9601,
-          "alien_rate": 0.0
+          "word_acc": 0.36,
+          "exact_rate": 0.36,
+          "cer": 0.4507,
+          "sub_cer": 0.4507,
+          "alien_rate": 0.02
         },
         "hard_50": {
           "n": 50,
-          "word_acc": 0.08,
-          "exact_rate": 0.08,
-          "cer": 0.7898,
-          "sub_cer": 0.7898,
-          "alien_rate": 0.0
+          "word_acc": 0.28,
+          "exact_rate": 0.28,
+          "cer": 0.5161,
+          "sub_cer": 0.5161,
+          "alien_rate": 0.02
         }
       },
       "dev_42roi": {
@@ -846,35 +846,35 @@
       "textzoom_150": {
         "all_150": {
           "n": 150,
-          "word_acc": 0.0333,
-          "exact_rate": 0.0333,
-          "cer": 0.8927,
-          "sub_cer": 0.8638,
-          "alien_rate": 0.0133
+          "word_acc": 0.58,
+          "exact_rate": 0.5667,
+          "cer": 0.2884,
+          "sub_cer": 0.2844,
+          "alien_rate": 0.0067
         },
         "easy_50": {
           "n": 50,
-          "word_acc": 0.02,
-          "exact_rate": 0.02,
-          "cer": 0.9643,
-          "sub_cer": 0.9243,
+          "word_acc": 0.72,
+          "exact_rate": 0.68,
+          "cer": 0.166,
+          "sub_cer": 0.1631,
           "alien_rate": 0.0
         },
         "medium_50": {
           "n": 50,
-          "word_acc": 0.0,
-          "exact_rate": 0.0,
-          "cer": 0.9064,
-          "sub_cer": 0.8864,
+          "word_acc": 0.6,
+          "exact_rate": 0.6,
+          "cer": 0.291,
+          "sub_cer": 0.2819,
           "alien_rate": 0.0
         },
         "hard_50": {
           "n": 50,
-          "word_acc": 0.08,
-          "exact_rate": 0.08,
-          "cer": 0.8073,
-          "sub_cer": 0.7806,
-          "alien_rate": 0.04
+          "word_acc": 0.42,
+          "exact_rate": 0.42,
+          "cer": 0.4082,
+          "sub_cer": 0.4082,
+          "alien_rate": 0.02
         }
       },
       "dev_42roi": {
@@ -1543,5 +1543,5 @@
       }
     }
   },
-  "elapsed_s": 1151.09
+  "elapsed_s": 93.45
 }

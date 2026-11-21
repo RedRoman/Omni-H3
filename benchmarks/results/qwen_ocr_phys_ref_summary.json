@@ -2,34 +2,34 @@
   "textzoom_150": {
     "all_150": {
       "n": 150,
-      "word_acc": 0.0067,
-      "exact_rate": 0.0067,
-      "cer": 0.9947,
-      "sub_cer": 0.9867,
-      "alien_rate": 0.0
+      "word_acc": 0.4267,
+      "exact_rate": 0.4267,
+      "cer": 1.6366,
+      "sub_cer": 0.4394,
+      "alien_rate": 0.02
     },
     "easy_50": {
       "n": 50,
-      "word_acc": 0.0,
-      "exact_rate": 0.0,
-      "cer": 1.0,
-      "sub_cer": 1.0,
-      "alien_rate": 0.0
+      "word_acc": 0.68,
+      "exact_rate": 0.68,
+      "cer": 0.476,
+      "sub_cer": 0.2227,
+      "alien_rate": 0.02
     },
     "medium_50": {
       "n": 50,
-      "word_acc": 0.0,
-      "exact_rate": 0.0,
-      "cer": 1.0,
-      "sub_cer": 1.0,
-      "alien_rate": 0.0
+      "word_acc": 0.38,
+      "exact_rate": 0.38,
+      "cer": 1.0594,
+      "sub_cer": 0.5517,
+      "alien_rate": 0.04
     },
     "hard_50": {
       "n": 50,
-      "word_acc": 0.02,
-      "exact_rate": 0.02,
-      "cer": 0.984,
-      "sub_cer": 0.96,
+      "word_acc": 0.22,
+      "exact_rate": 0.22,
+      "cer": 3.3742,
+      "sub_cer": 0.5437,
       "alien_rate": 0.0
     }
   },
