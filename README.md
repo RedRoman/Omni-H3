@@ -1,6 +1,6 @@
 <div align="center">
 
-# Omni-H3: Unifying Blind All-in-One Image Restoration in Frozen Foundation Models via Constrained Posterior Projection
+# Omni-H3-Image: Constrained Foundation Priors Usher a New Era of All-in-One Blind Image Restoration
 
 **Zihao He** &nbsp;·&nbsp; **Songhua Liu**<sup>*</sup>
 
@@ -156,7 +156,7 @@ If you find Omni-H3 useful in your research, please consider citing:
 
 ```bibtex
 @article{he2026omnih3,
-  title   = {Omni-H3: Unifying Blind All-in-One Image Restoration in Frozen Foundation Models via Constrained Posterior Projection},
+  title   = {Omni-H3-Image: Constrained Foundation Priors Usher a New Era of All-in-One Blind Image Restoration},
   author  = {He, Zihao and Liu, Songhua},
   journal = {Technical Report, Shanghai Jiao Tong University},
   year    = {2026},
