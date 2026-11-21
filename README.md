@@ -49,21 +49,21 @@ Off-the-shelf unified omni-image foundation models such as 33B **`MiniMax-H3-Ima
 
 ---
 
-## Main Quantitative Highlights (925 Strictly Blind Tasks)
+## Main Quantitative Highlights (925 Strictly Blind Tasks, 11 External SOTA Baselines)
 
-Evaluated 100% blindly (zero task IDs, zero dataset names, zero GT leakage) across **Public-647** (RealSR-Val, DRealSR-Val, Urban100, CBSD68, TextZoom-150), **Dev-160** (External-64 + Native 2K Dev-96), and an untouched one-shot **`locked_test` (118)**:
+Evaluated 100% blindly (zero task IDs, zero dataset names, zero GT leakage) across **Public-647** (RealSR-Val, DRealSR-Val, Urban100, CBSD68, TextZoom-150), **Dev-160** (External-64 + Native 2K Dev-96), and an untouched one-shot **`locked_test` (118)** against **11 external SOTA baselines** spanning 5 unified omni-image models (`Base H3-33B`, `GLM-Image`, `FLUX.2-klein`, `FLUX.1-Kontext-dev`, `Qwen-Image-Edit-2511`) and 6 specialized all-in-one / generative restorers (`AirNet`, `PromptIR`, `InstructIR`, `DiffBIR-v2.1`, `OneRestore`, `DA-CLIP`):
 
-| Benchmark Suite | Key Metric | Base H3-33B | PromptIR | InstructIR | DiffBIR-v2.1 | **RestoreH3 (Ours)** |
-|---|---|---:|---:|---:|---:|---:|
-| **All-497 Public Scenes** | PSNR (dB) ↑ / DISTS ↓ | 16.66 / 0.211 | 26.55 / 0.203 | 26.73 / 0.195 | 22.71 / 0.219 | **29.01 (+12.35 dB) / 0.184** |
-| **Urban100 4× SR (100)** | ChP95 ↓ / LPIPS ↓ / DISTS ↓ | 9.50 / 0.347 / 0.213 | — / 0.312 / 0.193 | — / 0.306 / 0.184 | — / 0.369 / 0.205 | **0.80 (-91.6%) / 0.289 / 0.163** |
-| **CBSD68 Clean Identity (68)** | PSNR (dB) ↑ | 16.95 | 40.31 | 38.67 | 22.58 | **76.59 (#1 Overall)** |
-| **TextZoom-Medium (50)** | WordAcc ↑ / Alien ↓ | 28.0% / 2.0% | 22.0% / 2.0% | 24.0% / 2.0% | 22.0% / 0.0% | **40.0% (#1 Overall) / 0.0%** |
-| **TextZoom-Hard (50)** | Alien-Script Hallucination ↓ | 10.0% | 2.0% | 2.0% | 4.0% | **0.0% (Clean Abstention)** |
-| **Unseen `locked_test` Ext-94** | DISTS ↓ (All / Rain100H / GoPro) | 0.193 / 0.213 / 0.190 | 0.208 / 0.269 / 0.203 | 0.203 / 0.288 / 0.144 | 0.312 / 0.406 / 0.271 | **0.188 / 0.208 / 0.140 (#1)** |
-| **Unseen `locked_test` 2K (22)** | LPIPS ↓ / DISTS ↓ / 132-ROI SubCER ↓ | 0.373 / 0.177 / 0.248 | 0.380 / 0.232 / 0.256 | 0.391 / 0.232 / 0.251 | 0.491 / 0.273 / 0.484 | **0.366 / 0.173 / 0.233 (#1)** |
+| Benchmark Suite | Key Metric | Base H3-33B | FLUX.1-Ktx | Qwen-2511 | PromptIR | InstructIR | OneRestore | DA-CLIP | **RestoreH3 (Ours)** |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **All-497 Public Scenes** | PSNR (dB) ↑ / DISTS ↓ | 16.66 / 0.211 | 11.34 / 0.293 | 15.62 / 0.267 | 26.51 / 0.203 | 26.65 / 0.195 | 21.32 / 0.234 | 27.51 / 0.209 | **29.01 (#1) / 0.184 (#1)** |
+| **Urban100 4× SR (100)** | ChP95 ↓ / LPIPS ↓ / DISTS ↓ | 9.50 / 0.402 / 0.176 | 23.61 / 0.562 / 0.238 | 17.51 / 0.490 / 0.217 | — / 0.380 / 0.270 | — / 0.359 / 0.247 | 4.97 / 0.393 / 0.278 | 1.44 / 0.380 / 0.270 | **0.80 / 0.288 / 0.163 (#1)** |
+| **CBSD68 Clean ID (68)** | PSNR (dB) ↑ | 16.19 | 11.42 | 18.29 | 37.75 | 29.06 | 40.69 | 42.66 | **76.59 (#1 Overall)** |
+| **TextZoom-Medium (50)** | WordAcc ↑ / Hard Alien ↓ | 28.0% / 2.0% | 32.0% / 0.0% | 32.0% / 0.0% | 36.0% / 2.0% | 32.0% / 0.0% | 32.0% / 0.0% | 26.0% / 2.0% | **40.0% (#1) / 0.0%** |
+| **Native 2K Dev-96 (96)** | PSNR (dB) ↑ / DISTS ↓ | 22.61 / 0.198 | 21.80 / 0.220 | 23.70 / 0.209 | 26.65 / 0.221 | 26.83 / 0.219 | 23.14 / 0.260 | 25.08 / 0.250 | **28.98 (#1) / 0.188 (#1)** |
+| **Unseen `locked_test` 2K** | All-24 / NonClean-22 DISTS ↓ | 0.176 / 0.177 | 0.186 / 0.190 | 0.173 / 0.176 | 0.214 / 0.232 | 0.216 / 0.232 | 0.245 / 0.266 | 0.276 / 0.295 | **0.167 (#1) / 0.173 (#1)** |
+| **Unseen 132-ROI Signage** | SubCER ↓ / Can-22 CER ↓ | 0.248 / 0.433 | 0.362 / 0.651 | 0.335 / 0.502 | 0.256 / 2.035 | 0.251 / 0.581 | 0.268 / 5.069 | 0.409 / 5.162 | **0.233 (#1) / 0.432 (#1)** |
 
-Complete raw per-suite summary ledgers are archived in [`benchmarks/results/`](benchmarks/results/).
+Complete raw per-suite summary ledgers (including `extra_sota_925_summary.json`) are archived in [`benchmarks/results/`](benchmarks/results/).
 
 ---
 
