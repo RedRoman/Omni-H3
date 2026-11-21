@@ -1,0 +1,70 @@
+{
+  "textzoom_150": {
+    "all_150": {
+      "n": 150,
+      "word_acc": 0.0067,
+      "exact_rate": 0.0067,
+      "cer": 0.9947,
+      "sub_cer": 0.9867,
+      "alien_rate": 0.0
+    },
+    "easy_50": {
+      "n": 50,
+      "word_acc": 0.0,
+      "exact_rate": 0.0,
+      "cer": 1.0,
+      "sub_cer": 1.0,
+      "alien_rate": 0.0
+    },
+    "medium_50": {
+      "n": 50,
+      "word_acc": 0.0,
+      "exact_rate": 0.0,
+      "cer": 1.0,
+      "sub_cer": 1.0,
+      "alien_rate": 0.0
+    },
+    "hard_50": {
+      "n": 50,
+      "word_acc": 0.02,
+      "exact_rate": 0.02,
+      "cer": 0.984,
+      "sub_cer": 0.96,
+      "alien_rate": 0.0
+    }
+  },
+  "dev_42roi": {
+    "n": 42,
+    "word_acc": 0.0714,
+    "exact_rate": 0.5476,
+    "cer": 0.5646,
+    "sub_cer": 0.3764,
+    "alien_rate": 0.0
+  },
+  "locked_132roi": {
+    "all_132": {
+      "n": 132,
+      "word_acc": 0.5076,
+      "exact_rate": 0.5076,
+      "cer": 2.6966,
+      "sub_cer": 0.2674,
+      "alien_rate": 0.0076
+    },
+    "severe6_66": {
+      "n": 66,
+      "word_acc": 0.4242,
+      "exact_rate": 0.4242,
+      "cer": 4.3715,
+      "sub_cer": 0.3519,
+      "alien_rate": 0.0152
+    },
+    "canonical_22": {
+      "n": 22,
+      "word_acc": 0.5909,
+      "exact_rate": 0.5909,
+      "cer": 0.8267,
+      "sub_cer": 0.1841,
+      "alien_rate": 0.0
+    }
+  }
+}

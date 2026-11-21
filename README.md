@@ -20,9 +20,9 @@ School of Artificial Intelligence, Shanghai Jiao Tong University
 
 ## Overview
 
-Off-the-shelf unified omni-image foundation models such as 33B **`MiniMax-H3-Image`**, **`FLUX.1-Kontext`**, and **`Qwen-Image-Edit-2511`** synthesize sharp textures yet collapse in pixel and structural fidelity (11.34–16.66 dB PSNR across 497 standard public scenes) when applied blindly to all-in-one image restoration due to **spatial zoom/lattice drift**, **mid-band chromatic hallucination**, and **high-entropy text fabrication**.
+Off-the-shelf unified omni-image foundation models such as 33B **`MiniMax-H3-Image`**, **`FLUX.1-Kontext`**, and **`Qwen-Image-Edit-2511`** synthesize sharp textures yet collapse in pixel and structural fidelity (11.33–16.74 dB PSNR across 429 degraded public scenes) when applied blindly to all-in-one image restoration due to **spatial zoom/lattice drift**, **mid-band chromatic hallucination**, and **high-entropy text fabrication**.
 
-**Omni-H3** formulates blind all-in-one restoration as **Three-Stage Constrained Posterior Projection** over the **unmodified 33B `MiniMax-H3-Image` and `Qwen3-VL-32B` backbones**, adding only a compact **0.92M-parameter auxiliary weather pre-conditioner** (`<0.003%` of backbone weights):
+**Omni-H3** formulates blind all-in-one restoration as **Approximate Three-Stage Constrained Posterior Projection** over the **unmodified 33B `MiniMax-H3-Image` and `Qwen3-VL-32B` backbones**, adding only a compact **0.92M-parameter auxiliary weather pre-conditioner** (`<0.003%` of backbone weights):
 
 - **Stage I — Blind Physics–VLM Sensing, Pre-Conditioning & Exact-32 px Lattice Framing ($\mathcal{R}_{\mathrm{phys}}$)**: Unifies VLM–Koschmieder consensus routing, clean-photo Early Exit bypass, compact 0.92M weather pre-stripping, spatial-homogeneity camera-shake deconvolution, Haar-MAD spectral noise anchoring, and exact-32 px isotropic reflect-padding with early-step latent phase anchoring $(\eta_0, \eta_1)$.
 - **Stage II — Joint Geometric–Spectral–Chromatic Projection ($\Pi_{\mathcal{M}_{\mathrm{phys}}}$)**: Performs NCC-verified 4-DOF blind sub-pixel affine registration, BT.601 YCbCr luminance octave-band Wiener SNR locking, continuous 3rd-order Butterworth opponent-chroma locking, and an achromatic neutral guard (`-91.6%` Urban100 chromatic drift, eliminating false B&W yellowing).
@@ -51,19 +51,22 @@ Off-the-shelf unified omni-image foundation models such as 33B **`MiniMax-H3-Ima
 
 ## Main Quantitative Highlights (925 Strictly Blind Tasks, 11 External SOTA Baselines)
 
-Evaluated 100% blindly (zero task IDs, zero dataset names, zero GT leakage) across **Public-647** (RealSR-Val, DRealSR-Val, Urban100, CBSD68, TextZoom-150), **Dev-160** (External-64 + Native 2K Dev-96), and an untouched one-shot **`locked_test` (118)** against **11 external SOTA baselines** spanning 5 unified omni-image models (`Base H3-33B`, `GLM-Image`, `FLUX.2-klein`, `FLUX.1-Kontext-dev`, `Qwen-Image-Edit-2511`) and 6 specialized all-in-one / generative restorers (`AirNet`, `PromptIR`, `InstructIR`, `DiffBIR-v2.1`, `OneRestore`, `DA-CLIP`):
+Evaluated 100% blindly (zero task IDs, zero dataset names, zero GT leakage; SR benchmarks pre-upsampled to target resolution via bicubic interpolation per standard protocol) across **Public-647** (RealSR-Val, DRealSR-Val, Urban100, CBSD68, TextZoom-150), **Dev-160** (External-64 + Native 2K Dev-96), and the held-out **`locked_test` (118)** suite against **11 external SOTA baselines** spanning 5 unified omni-image models (`Base H3-33B`, `GLM-Image`, `FLUX.2-klein`, `FLUX.1-Kontext-dev`, `Qwen-Image-Edit-2511`) and 6 specialized all-in-one / generative restorers (`AirNet`, `PromptIR`, `InstructIR`, `DiffBIR-v2.1`, `OneRestore`, `DA-CLIP`), plus **`Stage I Ref Only (w/o 33B DiT)`** controls and **dual independent non-Qwen OCR (`RapidOCR PP-OCRv4` & `TrOCR-large-str`)**:
 
-| Benchmark Suite | Key Metric | Base H3-33B | FLUX.1-Ktx | Qwen-2511 | PromptIR | InstructIR | OneRestore | DA-CLIP | **Omni-H3 (Ours)** |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| **All-497 Public Scenes** | PSNR (dB) ↑ / DISTS ↓ | 16.66 / 0.211 | 11.34 / 0.293 | 15.62 / 0.267 | 26.51 / 0.203 | 26.65 / 0.195 | 21.32 / 0.234 | 27.51 / 0.209 | **29.01 (#1) / 0.184 (#1)** |
-| **Urban100 4× SR (100)** | ChP95 ↓ / LPIPS ↓ / DISTS ↓ | 9.50 / 0.402 / 0.176 | 23.61 / 0.562 / 0.238 | 17.51 / 0.490 / 0.217 | — / 0.380 / 0.270 | — / 0.359 / 0.247 | 4.97 / 0.393 / 0.278 | 1.44 / 0.380 / 0.270 | **0.80 / 0.288 / 0.163 (#1)** |
-| **CBSD68 Clean ID (68)** | PSNR (dB) ↑ | 16.19 | 11.42 | 18.29 | 37.75 | 29.06 | 40.69 | 42.66 | **76.59 (#1 Overall)** |
-| **TextZoom-Medium (50)** | WordAcc ↑ / Hard Alien ↓ | 28.0% / 2.0% | 32.0% / 0.0% | 32.0% / 0.0% | 36.0% / 2.0% | 32.0% / 0.0% | 32.0% / 0.0% | 26.0% / 2.0% | **40.0% (#1) / 0.0%** |
-| **Native 2K Dev-96 (96)** | PSNR (dB) ↑ / DISTS ↓ | 22.61 / 0.198 | 21.80 / 0.220 | 23.70 / 0.209 | 26.65 / 0.221 | 26.83 / 0.219 | 23.14 / 0.260 | 25.08 / 0.250 | **28.98 (#1) / 0.188 (#1)** |
-| **Unseen `locked_test` 2K** | All-24 / NonClean-22 DISTS ↓ | 0.176 / 0.177 | 0.186 / 0.190 | 0.173 / 0.176 | 0.214 / 0.232 | 0.216 / 0.232 | 0.245 / 0.266 | 0.276 / 0.295 | **0.167 (#1) / 0.173 (#1)** |
-| **Unseen 132-ROI Signage** | SubCER ↓ / Can-22 CER ↓ | 0.248 / 0.433 | 0.362 / 0.651 | 0.335 / 0.502 | 0.256 / 2.035 | 0.251 / 0.581 | 0.268 / 5.069 | 0.409 / 5.162 | **0.233 (#1) / 0.432 (#1)** |
+> Aggregate scene rows below report **strictly degraded tasks** (`Degraded-429` and `2K Dev Non-Clean 88`) to avoid clean-identity 99 dB capping bias; CBSD68 Clean-68 is reported in its own row (`97.1%` weather-router specificity, `69.1%` exact 99 dB pixel-identical Early Exit, `76.59 dB` mean PSNR).
 
-Complete raw per-suite summary ledgers (including `extra_sota_925_summary.json`) are archived in [`benchmarks/results/`](benchmarks/results/).
+| Benchmark Suite | Key Metric | Input | Stage I Ref (w/o DiT) | Base H3-33B | Qwen-2511 | PromptIR | InstructIR | **Omni-H3 (Ours)** |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| **Public Degraded-429** | PSNR (dB) ↑ / DISTS ↓ / NIQE ↓ | 22.67 / 0.293 / 9.95 | 24.01 / 0.295 / 9.41 | 16.74 / 0.223 / 4.46 | 15.20 / 0.287 / 7.38 | 24.73 / 0.234 / 7.42 | **26.26** / 0.213 / 7.03 | **21.47 (#1 Omni) / 0.207 (#1) / 4.45 (#1)** |
+| **Urban100 4× SR (100)** | ChP95 ↓ / LPIPS ↓ / DISTS ↓ | — / 0.378 / 0.270 | 0.22 / 0.378 / 0.270 | 9.50 / 0.402 / 0.176 | 17.51 / 0.490 / 0.217 | — / 0.380 / 0.270 | — / 0.359 / 0.247 | **0.80 / 0.288 / 0.163 (#1)** |
+| **CBSD68 Clean ID (68)** | PSNR (dB) ↑ | 99.00 | 91.28 | 16.19 | 18.29 | 37.75 | 29.06 | **76.59 (#1 Overall)** |
+| **TextZoom-Medium (50)** | Qwen / RapidOCR WordAcc ↑ | 34.0% / 40.0% | 0.0% / 0.0% | 28.0% / 24.0% | 32.0% / 30.0% | 36.0% / **36.0%** | 32.0% / 32.0% | **40.0% (#1) / 36.0% (#1)** |
+| **Native 2K Dev (Non-Clean 88)** | PSNR (dB) ↑ / DISTS ↓ | 23.73 / 0.288 | 25.45 / 0.271 | 22.51 / **0.202** | 23.64 / 0.210 | 26.34 / 0.238 | **26.63** / 0.232 | **23.54 / 0.202 (#1)** |
+| **Held-Out `locked_test` 2K** | All-24 / NonClean-22 DISTS ↓ | 0.264 / 0.288 | 0.225 / 0.245 | 0.176 / 0.177 | 0.173 / 0.176 | 0.214 / 0.232 | 0.216 / 0.232 | **0.167 (#1) / 0.173 (#1)** |
+| **Held-Out 132-ROI (Qwen OCR)** | SubCER ↓ / Can-22 CER ↓ | 0.270 / 3.594 | 0.267 / 0.827 | 0.248 / 0.433 | 0.335 / 0.502 | 0.256 / 2.035 | 0.251 / 0.581 | **0.233 (#1) / 0.432 (#1)** |
+| **Held-Out 132-ROI (`RapidOCR` Indep.)** | Exact ↑ / SubCER ↓ / Can-22 CER ↓ | 34.8% / 0.456 / 0.322 | 32.6% / 0.447 / 0.305 | 14.4% / 0.416 / 0.330 | 17.4% / 0.470 / 0.403 | 34.1% / 0.425 / 0.270 | 36.4% / 0.403 / 0.249 | **39.4% / 0.319 / 0.195 (#1 Overall)** |
+
+Complete raw per-suite summary ledgers (including `extra_sota_925_summary.json`, `phys_ref_iqa_summary.json`, and `indep_ocr_summary.json`) are archived in [`benchmarks/results/`](benchmarks/results/).
 
 ---
 

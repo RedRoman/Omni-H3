@@ -1,0 +1,255 @@
+{
+  "elapsed_s": 0.16,
+  "public_497": {
+    "all_497": {
+      "n": 497,
+      "psnr_db": 33.2157,
+      "ssim": 0.6951,
+      "lpips_vgg": 0.3914,
+      "dists": 0.2577,
+      "musiq": 31.3256,
+      "niqe": 8.5749,
+      "edge_f1_tol1px": 0.6149,
+      "local32_p95": 2.6953
+    },
+    "degraded_429": {
+      "n": 429,
+      "psnr_db": 24.0126,
+      "ssim": 0.6523,
+      "lpips_vgg": 0.448,
+      "dists": 0.2953,
+      "musiq": 25.7233,
+      "niqe": 9.4074,
+      "edge_f1_tol1px": 0.5564,
+      "local32_p95": 3.0707
+    },
+    "urban100": {
+      "n": 100,
+      "psnr_db": 21.6991,
+      "ssim": 0.633,
+      "lpips_vgg": 0.3778,
+      "dists": 0.2704,
+      "musiq": 36.7541,
+      "niqe": 7.5911,
+      "edge_f1_tol1px": 0.8149,
+      "local32_p95": 0.2233
+    },
+    "realsr": {
+      "n": 100,
+      "psnr_db": 25.3105,
+      "ssim": 0.7135,
+      "lpips_vgg": 0.4096,
+      "dists": 0.2642,
+      "musiq": 25.8086,
+      "niqe": 9.0246,
+      "edge_f1_tol1px": 0.6523,
+      "local32_p95": 3.6112
+    },
+    "drealsr": {
+      "n": 93,
+      "psnr_db": 27.3145,
+      "ssim": 0.784,
+      "lpips_vgg": 0.4216,
+      "dists": 0.2799,
+      "musiq": 22.6998,
+      "niqe": 10.5867,
+      "edge_f1_tol1px": 0.5087,
+      "local32_p95": 5.4092
+    },
+    "cbsd_clean": {
+      "n": 68,
+      "psnr_db": 91.2767,
+      "ssim": 0.9652,
+      "lpips_vgg": 0.0338,
+      "dists": 0.0207,
+      "musiq": 66.6697,
+      "niqe": 3.323,
+      "edge_f1_tol1px": 0.9842,
+      "local32_p95": 0.3275
+    },
+    "cbsd_s25": {
+      "n": 68,
+      "psnr_db": 23.1139,
+      "ssim": 0.5455,
+      "lpips_vgg": 0.5254,
+      "dists": 0.3327,
+      "musiq": 22.752,
+      "niqe": 9.9018,
+      "edge_f1_tol1px": 0.3912,
+      "local32_p95": 2.1771
+    },
+    "cbsd_s50": {
+      "n": 68,
+      "psnr_db": 21.8891,
+      "ssim": 0.5178,
+      "lpips_vgg": 0.5667,
+      "dists": 0.3614,
+      "musiq": 16.4823,
+      "niqe": 10.5338,
+      "edge_f1_tol1px": 0.2657,
+      "local32_p95": 4.1582
+    }
+  },
+  "dev_160": {
+    "ext64_all": {
+      "n": 64,
+      "psnr_db": 17.3135,
+      "ssim": 0.6534,
+      "lpips_vgg": 0.4151,
+      "dists": 0.2723,
+      "musiq": 46.913,
+      "niqe": 7.42,
+      "edge_f1_tol1px": 0.7438
+    },
+    "cdd11_all": {
+      "n": 33,
+      "psnr_db": 15.3483,
+      "ssim": 0.5899,
+      "lpips_vgg": 0.5198,
+      "dists": 0.3257,
+      "musiq": 51.1349,
+      "niqe": 7.6883,
+      "edge_f1_tol1px": 0.7471
+    },
+    "cdd11_3way": {
+      "n": 6,
+      "psnr_db": 13.7467,
+      "ssim": 0.4806,
+      "dists": 0.4052,
+      "musiq": 40.4939,
+      "niqe": 7.3038
+    },
+    "rain100h": {
+      "n": 8,
+      "psnr_db": 17.9393,
+      "ssim": 0.5311,
+      "lpips_vgg": 0.5696,
+      "dists": 0.3732,
+      "musiq": 44.1903,
+      "niqe": 12.1358,
+      "edge_f1_tol1px": 0.5149
+    },
+    "gopro": {
+      "n": 11,
+      "psnr_db": 24.7497,
+      "ssim": 0.7792,
+      "lpips_vgg": 0.3212,
+      "dists": 0.2005,
+      "musiq": 22.4804,
+      "niqe": 6.947,
+      "edge_f1_tol1px": 0.7069
+    },
+    "v3_all96": {
+      "n": 96,
+      "psnr_db": 30.7704,
+      "ssim": 0.7152,
+      "lpips_vgg": 0.4139,
+      "dists": 0.2509,
+      "musiq": 32.4719,
+      "niqe": 8.9018,
+      "edge_f1_tol1px": 0.6507
+    },
+    "v3_nonclean88": {
+      "n": 88,
+      "psnr_db": 25.4456,
+      "ssim": 0.6944,
+      "lpips_vgg": 0.4457,
+      "dists": 0.2706,
+      "musiq": 30.2432,
+      "niqe": 9.2365,
+      "edge_f1_tol1px": 0.6208
+    },
+    "v3_shake25": {
+      "n": 8,
+      "psnr_db": 22.8724,
+      "ssim": 0.6049,
+      "lpips_vgg": 0.4966,
+      "dists": 0.3105,
+      "musiq": 21.9139,
+      "niqe": 10.0182,
+      "edge_f1_tol1px": 0.4691
+    }
+  },
+  "locked_118": {
+    "ext94_all": {
+      "n": 94,
+      "psnr_db": 16.6623,
+      "ssim": 0.6095,
+      "lpips_vgg": 0.4374,
+      "dists": 0.3015,
+      "musiq": 47.7008,
+      "niqe": 7.5688,
+      "edge_f1_tol1px": 0.6608
+    },
+    "rain100h": {
+      "n": 16,
+      "psnr_db": 17.3921,
+      "ssim": 0.4627,
+      "lpips_vgg": 0.5904,
+      "dists": 0.3817,
+      "musiq": 48.5287,
+      "niqe": 11.7856,
+      "edge_f1_tol1px": 0.54
+    },
+    "gopro": {
+      "n": 11,
+      "psnr_db": 25.3072,
+      "ssim": 0.7821,
+      "lpips_vgg": 0.3184,
+      "dists": 0.2024,
+      "musiq": 26.986,
+      "niqe": 6.3234,
+      "edge_f1_tol1px": 0.7154
+    },
+    "sots_in": {
+      "n": 6,
+      "psnr_db": 10.8492,
+      "ssim": 0.6382,
+      "lpips_vgg": 0.2156,
+      "dists": 0.2033,
+      "musiq": 41.8788,
+      "niqe": 5.6355,
+      "edge_f1_tol1px": 0.7682
+    },
+    "sots_out": {
+      "n": 6,
+      "psnr_db": 17.1351,
+      "ssim": 0.8291,
+      "lpips_vgg": 0.1376,
+      "dists": 0.148,
+      "musiq": 65.8909,
+      "niqe": 3.4131,
+      "edge_f1_tol1px": 0.9011
+    },
+    "cdd11_all": {
+      "n": 55,
+      "psnr_db": 15.3036,
+      "ssim": 0.5905,
+      "lpips_vgg": 0.4735,
+      "dists": 0.3255,
+      "musiq": 50.2537,
+      "niqe": 7.2555,
+      "edge_f1_tol1px": 0.6471
+    },
+    "cam24_all": {
+      "n": 24,
+      "psnr_db": 35.7746,
+      "ssim": 0.869,
+      "lpips_vgg": 0.3493,
+      "dists": 0.2249,
+      "musiq": 20.0773,
+      "niqe": 9.6005,
+      "edge_f1_tol1px": 0.7114
+    },
+    "cam24_nonclean22": {
+      "n": 22,
+      "psnr_db": 30.0268,
+      "ssim": 0.8571,
+      "lpips_vgg": 0.381,
+      "dists": 0.2453,
+      "musiq": 18.7038,
+      "niqe": 9.9813,
+      "edge_f1_tol1px": 0.6852
+    }
+  }
+}
