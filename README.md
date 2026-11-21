@@ -66,7 +66,7 @@ Evaluated 100% blindly (zero task IDs, zero dataset names, zero GT leakage; SR b
 | **Held-Out 132-ROI (Qwen OCR)** | SubCER ↓ / Can-22 CER ↓ | 0.270 / 3.594 | 0.267 / 0.827 | 0.248 / 0.433 | 0.335 / 0.502 | 0.256 / 2.035 | 0.251 / 0.581 | **0.233 (#1) / 0.432 (#1)** |
 | **Held-Out 132-ROI (`RapidOCR` Indep.)** | Exact ↑ / SubCER ↓ / Can-22 CER ↓ | 34.8% / 0.456 / 0.322 | 32.6% / 0.447 / 0.305 | 14.4% / 0.416 / 0.330 | 17.4% / 0.470 / 0.403 | 34.1% / 0.425 / 0.270 | 36.4% / 0.403 / 0.249 | **39.4% / 0.319 / 0.195 (#1 Overall)** |
 
-Complete raw per-suite summary ledgers (including `extra_sota_925_summary.json`, `phys_ref_iqa_summary.json`, and `indep_ocr_summary.json`) are archived in [`benchmarks/results/`](benchmarks/results/).
+> Independent 2K OCR (`RapidOCR PP-OCRv4` and `TrOCR-large-str`) is evaluated on **pre-annotated ROI crops**; note that the two engines diverge on All-132 (`RapidOCR` cuts Input SubCER `0.456 -> 0.319`, whereas blur-tolerant `TrOCR` scores `0.337` vs. `0.320` Input while improving `Severe-6` `0.443 -> 0.409`). Complete raw per-suite summary ledgers (including `extra_sota_925_summary.json`, `phys_ref_iqa_summary.json`, and `indep_ocr_summary.json`) are archived in [`benchmarks/results/`](benchmarks/results/).
 
 ---
 
