@@ -7,6 +7,8 @@
 School of Artificial Intelligence, Shanghai Jiao Tong University  
 <sup>*</sup>Corresponding author: `liusonghua@sjtu.edu.cn`
 
+[![arXiv](https://img.shields.io/badge/arXiv-2611.28836-B31B1B.svg)](https://arxiv.org/abs/2611.28836)
+[![PDF](https://img.shields.io/badge/Paper-PDF-991B1B.svg)](https://arxiv.org/pdf/2611.28836)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](pyproject.toml)
 [![Weights](https://img.shields.io/badge/Release-v1.0.0%20Pre--Cond%20(0.92M)-0F766E.svg)](https://github.com/RedRoman/Omni-H3/releases/tag/v1.0.0)
@@ -156,11 +158,14 @@ If you find Omni-H3 useful in your research, please consider citing:
 
 ```bibtex
 @article{he2026omnih3,
-  title   = {Omni-H3-Image: Constrained Foundation Priors Usher in a New Era of All-in-One Blind Image Restoration},
-  author  = {He, Zihao and Liu, Songhua},
-  journal = {Technical Report, Shanghai Jiao Tong University},
-  year    = {2026},
-  url     = {https://github.com/RedRoman/Omni-H3}
+  title         = {Omni-H3-Image: Constrained Foundation Priors Usher in a New Era of All-in-One Blind Image Restoration},
+  author        = {He, Zihao and Liu, Songhua},
+  journal       = {arXiv preprint arXiv:2611.28836},
+  year          = {2026},
+  eprint        = {2611.28836},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2611.28836}
 }
 ```
 
